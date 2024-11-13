@@ -1,0 +1,13 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'rpc_gateway'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['rpc_gateway:5000']
+
+  - job_name: 'calc_service'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['calc_service:5002']
